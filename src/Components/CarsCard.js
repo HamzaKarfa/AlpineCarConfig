@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Button from 'react-bootstrap/Button'
 import {choiceVersion, choiceCount} from '../action/index'
 import Data from './Data'
+import Card from 'react-bootstrap/Card';
 
 import { Link } from "react-router-dom";
 
@@ -38,19 +39,19 @@ function selectVersion(){
 }
 
 return(
-  <div className="col-sm-4 card center" id='cardcars'>
-      <div className="card-body text-center">
-          <h5 className="card-title">{ownProps.Cars.name}</h5>
-
-          <span className="badge badge-danger ml-2 " id="degatSpanJ1"></span>
-          <div className="row cars">
-              <p> {ownProps.Cars.price}</p>
-              <img src={ownProps.Cars.picture}/>
-          </div>
-      </div>
-      <Link to="/Colors">
-          <Button variant="light" onClick={()=>selectVersion()} className="w-100">Configurer</Button>
-        </Link>
+  <div className='d-flex align-items-center flex-column justify-content-between'>
+    <div className='m-2 text-center' id='colorschoice'>
+      <Card.Img
+        variant='top'
+        src={ownProps.Cars.picture}
+        className='colorsImg'
+      />
+      <Card.Title className='titlecolors'>{ownProps.Cars.name}</Card.Title>
+      <Card.Text className='titlecolors'>{ownProps.Cars.price}€</Card.Text>
+      <Button variant='light' className='' onClick={e => selectVersion(e)}>
+        Choisir
+      </Button>
+    </div>
   </div>
 )
 };
