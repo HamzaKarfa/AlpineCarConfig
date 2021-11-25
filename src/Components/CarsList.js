@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 
 
       return (
-        <div className='row'>
+        <div className='d-flex justify-content-envenly'>
           {displayCars() }
         </div>
       );
