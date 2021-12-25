@@ -24,7 +24,10 @@ const mapStateToProps = state => {
 
       return (
         <div className='d-flex justify-content-evenly'>
-          {displayCars() }
+            {displayCars() }
+            <Link to="/colors" className="col-sm-6 buttonchoice text-white h4 p-3">
+                À suivre / Couleurs ➙
+            </Link>
         </div>
       );
     }
